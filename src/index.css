@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-brand-red: #ff3b3b;
+  --color-brand-yellow: #ffcc00;
+  --color-brand-black: #0a0a0a;
+  --color-brand-gray: #1a1a1a;
+  
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-brand-black);
+    color: white;
+    font-family: var(--font-sans);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    letter-spacing: -0.025em;
+  }
+}
+
+.ff-card {
+  background-color: rgba(26, 26, 26, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+}
+
+.ff-button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  transition: all 0.2rem;
+}
+
+.ff-button:active {
+  transform: scale(0.95);
+}
+
+.ff-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ff-button-primary {
+  background-color: var(--color-brand-red);
+  color: white;
+  box-shadow: 0 10px 15px -3px rgba(153, 27, 27, 0.2);
+}
+
+.ff-button-primary:hover {
+  background-color: #dc2626;
+}
+
+.ff-button-outline {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ff-button-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ff-input {
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.ff-input:focus {
+  border-color: var(--color-brand-red);
+}
+
+.ff-badge {
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-brand-black);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
+}

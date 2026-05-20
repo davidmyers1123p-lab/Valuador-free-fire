@@ -1,0 +1,6 @@
+{
+  "name": "Free Fire Account Valuator",
+  "description": "Calculate the market value of your Free Fire account based on skins, characters, and rare items using AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

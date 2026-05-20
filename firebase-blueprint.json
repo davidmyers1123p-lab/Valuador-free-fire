@@ -1,0 +1,43 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Public and private user profile data.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastLogin": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "email"]
+    },
+    "FFAccount": {
+      "title": "Free Fire Account",
+      "description": "Linked Free Fire account data.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "playerId": { "type": "string", "description": "Free Fire Player ID" },
+        "nickname": { "type": "string" },
+        "region": { "type": "string" },
+        "level": { "type": "number" },
+        "rank": { "type": "string" },
+        "linkedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["userId", "playerId", "region"]
+    }
+  },
+  "firestore": {
+    "users/{userId}": {
+      "schema": "User",
+      "description": "Individual user document."
+    },
+    "ff_accounts/{userId}": {
+      "schema": "FFAccount",
+      "description": "Linked Free Fire account for a user."
+    }
+  }
+}
